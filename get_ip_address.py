@@ -10,7 +10,6 @@ def check_ip_addr(dns, ip):
     current_ip_addr = []
     for i in dns:
         current_ip_addr.append(socket.gethostbyname(i))
-    print(current_ip_addr)
     for k in range(len(ip)):
         if current_ip_addr[k] == ip[k]:
             print(f"http://{dns[k]} - {ip[k]}")
@@ -20,5 +19,4 @@ def check_ip_addr(dns, ip):
 if __name__ == '__main__':
     dns = ['drive.google.com', 'google.com', 'mail.google.com']
     ip = get_ip(dns)
-    print(ip)
     check_ip_addr(dns, ip)
